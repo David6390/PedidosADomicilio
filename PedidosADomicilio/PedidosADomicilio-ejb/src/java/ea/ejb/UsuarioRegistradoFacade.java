@@ -6,9 +6,11 @@
 package ea.ejb;
 
 import ea.entity.UsuarioRegistrado;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -26,6 +28,29 @@ public class UsuarioRegistradoFacade extends AbstractFacade<UsuarioRegistrado> {
 
     public UsuarioRegistradoFacade() {
         super(UsuarioRegistrado.class);
+    }
+    
+    public UsuarioRegistrado usuarioIsRegistrado(String email,String password){
+        UsuarioRegistrado usuario;
+        List<UsuarioRegistrado> listaUsuarios;
+        
+        Query q;
+        
+        q = em.createQuery("select u from USUARIO_REGISTRADO WHERE u.EMAIL = :email and u.PASSWORD = :password");
+        q.setParameter("email", email );
+        q.setParameter("password",password);
+        
+        listaUsuarios = q.getResultList();
+        
+        if (!listaUsuarios.isEmpty()){
+            usuario = listaUsuarios.get(0);
+        }
+        else{
+            usuario = null;
+        }
+        
+        return usuario;
+                
     }
     
 }

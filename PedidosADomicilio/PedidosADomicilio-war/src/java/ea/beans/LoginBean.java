@@ -5,6 +5,8 @@
  */
 package ea.beans;
 
+import ea.ejb.UsuarioRegistradoFacade;
+import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
@@ -15,11 +17,23 @@ import javax.faces.bean.RequestScoped;
 @ManagedBean
 @RequestScoped
 public class LoginBean {
+    @EJB
+    private UsuarioRegistradoFacade usuarioRegistradoFacade;
 
     /**
      * Creates a new instance of LoginBean
      */
     public LoginBean() {
     }
+
+    public UsuarioRegistradoFacade getUsuarioRegistradoFacade() {
+        return usuarioRegistradoFacade;
+    }
+
+    public void setUsuarioRegistradoFacade(UsuarioRegistradoFacade usuarioRegistradoFacade) {
+        this.usuarioRegistradoFacade = usuarioRegistradoFacade;
+    }
+    
+    
     
 }

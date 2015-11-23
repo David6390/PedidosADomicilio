@@ -20,6 +20,7 @@ public class LoginBean {
      * Creates a new instance of LoginBean
      */
     public LoginBean() {
+        System.out.println("Hola que ase");
     }
     
 }

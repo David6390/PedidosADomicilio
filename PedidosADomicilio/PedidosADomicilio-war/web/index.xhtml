@@ -6,7 +6,7 @@
       xmlns:b="http://bootsfaces.net/ui">
     <link href="index.css" type="text/css" rel="stylesheet" />  
     <h:head>
-        <title>Comida a Domicilio</title>
+        <title>Comida a Domicilio</title> 
     </h:head>
     <h:body>
         <ui:include src="/header.xhtml" />
@@ -16,9 +16,9 @@
                 <h:outputLabel value="Codigo Postal:"/>
                 <h:outputLabel value="Tipo de Comida" />
                 <h:outputLabel value="" />
-                <b:inputText span="10" value="Codigo Postal"/>
+                <b:inputText span="10" value="Codigo Postal" id="codpostal"/>
                 <b:inputText span="10" value="Tipo de Comida"/>
-                <b:button value="Buscar Restaurantes" look="primary"/>
+                <h:commandButton action="#{restauranteBean.doBuscar()}" value="Buscar Restaurantes"/>
             </b:panelGrid>
         </b:panel>
     </h:body>

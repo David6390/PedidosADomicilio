@@ -45,8 +45,6 @@ public class UsuarioRegistradoFacade extends AbstractFacade<UsuarioRegistrado> {
         else{
             usuario = null;
         }
-        return usuario;
-                
+        return usuario;      
     }
-    
 }

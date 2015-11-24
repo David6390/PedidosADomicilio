@@ -6,6 +6,7 @@
 package ea.entity;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -40,14 +41,14 @@ public class Menu implements Serializable {
     @Id
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 10)
     @Column(name = "ID_MENU")
-    private String idMenu;
+    private Integer idMenu;
     @Size(max = 20)
     @Column(name = "NOMBRE")
     private String nombre;
+    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(name = "PRECIO")
-    private Long precio;
+    private BigDecimal precio;
     @Size(max = 100)
     @Column(name = "DESCRIPCION")
     private String descripcion;
@@ -60,15 +61,15 @@ public class Menu implements Serializable {
     public Menu() {
     }
 
-    public Menu(String idMenu) {
+    public Menu(Integer idMenu) {
         this.idMenu = idMenu;
     }
 
-    public String getIdMenu() {
+    public Integer getIdMenu() {
         return idMenu;
     }
 
-    public void setIdMenu(String idMenu) {
+    public void setIdMenu(Integer idMenu) {
         this.idMenu = idMenu;
     }
 
@@ -80,11 +81,11 @@ public class Menu implements Serializable {
         this.nombre = nombre;
     }
 
-    public Long getPrecio() {
+    public BigDecimal getPrecio() {
         return precio;
     }
 
-    public void setPrecio(Long precio) {
+    public void setPrecio(BigDecimal precio) {
         this.precio = precio;
     }
 

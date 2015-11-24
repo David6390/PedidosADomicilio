@@ -6,11 +6,9 @@
 package ea.ejb;
 
 import ea.entity.Restaurante;
-import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 
 /**
  *
@@ -28,13 +26,6 @@ public class RestauranteFacade extends AbstractFacade<Restaurante> {
 
     public RestauranteFacade() {
         super(Restaurante.class);
-    }
-
-    public List<Restaurante> buscarRestaurante(Integer codpostal) {
-        Query q;        
-        q = em.createNamedQuery("Restaurante.findByCodpostal");
-        q.setParameter("codpostal", codpostal);
-        return q.getResultList(); 
     }
     
 }

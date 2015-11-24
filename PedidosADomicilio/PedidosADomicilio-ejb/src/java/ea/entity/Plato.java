@@ -6,6 +6,7 @@
 package ea.entity;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -40,14 +41,14 @@ public class Plato implements Serializable {
     @Id
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 10)
     @Column(name = "ID_PLATO")
-    private String idPlato;
+    private Integer idPlato;
     @Size(max = 20)
     @Column(name = "NOMBRE")
     private String nombre;
+    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(name = "PRECIO")
-    private Long precio;
+    private BigDecimal precio;
     @Size(max = 100)
     @Column(name = "DESCRIPCION")
     private String descripcion;
@@ -60,15 +61,15 @@ public class Plato implements Serializable {
     public Plato() {
     }
 
-    public Plato(String idPlato) {
+    public Plato(Integer idPlato) {
         this.idPlato = idPlato;
     }
 
-    public String getIdPlato() {
+    public Integer getIdPlato() {
         return idPlato;
     }
 
-    public void setIdPlato(String idPlato) {
+    public void setIdPlato(Integer idPlato) {
         this.idPlato = idPlato;
     }
 
@@ -80,11 +81,11 @@ public class Plato implements Serializable {
         this.nombre = nombre;
     }
 
-    public Long getPrecio() {
+    public BigDecimal getPrecio() {
         return precio;
     }
 
-    public void setPrecio(Long precio) {
+    public void setPrecio(BigDecimal precio) {
         this.precio = precio;
     }
 

@@ -137,7 +137,7 @@ public class RestauranteBean {
     }
     
     public String doBuscar() {        
-        listaRestaurantes = this.restauranteFacade.buscarRestaurante(codpostal);        
+        //listaRestaurantes = this.restauranteFacade.buscarRestaurante(codpostal);        
         return "listarRestaurantes.xhtml";
     }
 

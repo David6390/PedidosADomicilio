@@ -57,13 +57,15 @@ public class Restaurante implements Serializable {
     @Size(max = 100)
     @Column(name = "DIRECCION")
     private String direccion;
+    @Size(max = 5)
     @Column(name = "CODPOSTAL")
-    private Integer codpostal;
+    private String codpostal;
     @Size(max = 20)
     @Column(name = "CIUDAD")
     private String ciudad;
+    @Size(max = 10)
     @Column(name = "TELEFONO")
-    private Long telefono;
+    private String telefono;
     // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
     @Size(max = 30)
     @Column(name = "EMAIL")
@@ -120,11 +122,11 @@ public class Restaurante implements Serializable {
         this.direccion = direccion;
     }
 
-    public Integer getCodpostal() {
+    public String getCodpostal() {
         return codpostal;
     }
 
-    public void setCodpostal(Integer codpostal) {
+    public void setCodpostal(String codpostal) {
         this.codpostal = codpostal;
     }
 
@@ -136,11 +138,11 @@ public class Restaurante implements Serializable {
         this.ciudad = ciudad;
     }
 
-    public Long getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(Long telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 

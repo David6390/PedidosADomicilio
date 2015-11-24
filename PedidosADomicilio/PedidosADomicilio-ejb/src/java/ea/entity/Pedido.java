@@ -6,6 +6,7 @@
 package ea.entity;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,7 +17,6 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -38,17 +38,21 @@ public class Pedido implements Serializable {
     @Id
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 10)
     @Column(name = "ID_PEDIDO")
-    private String idPedido;
+    private Integer idPedido;
     @Column(name = "CANTIDADMENU")
-    private Long cantidadmenu;
+    private Integer cantidadmenu;
     @Column(name = "CANTIDADPLATO")
-    private Long cantidadplato;
+    private Integer cantidadplato;
+    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+    @Basic(optional = false)
+    @NotNull
     @Column(name = "PRECIOTOTAL")
-    private Long preciototal;
+    private BigDecimal preciototal;
+    @Basic(optional = false)
+    @NotNull
     @Column(name = "GASTOSENVIO")
-    private Long gastosenvio;
+    private BigDecimal gastosenvio;
     @JoinColumn(name = "DNI", referencedColumnName = "DNI")
     @ManyToOne(optional = false)
     private UsuarioRegistrado dni;
@@ -65,47 +69,53 @@ public class Pedido implements Serializable {
     public Pedido() {
     }
 
-    public Pedido(String idPedido) {
+    public Pedido(Integer idPedido) {
         this.idPedido = idPedido;
     }
 
-    public String getIdPedido() {
+    public Pedido(Integer idPedido, BigDecimal preciototal, BigDecimal gastosenvio) {
+        this.idPedido = idPedido;
+        this.preciototal = preciototal;
+        this.gastosenvio = gastosenvio;
+    }
+
+    public Integer getIdPedido() {
         return idPedido;
     }
 
-    public void setIdPedido(String idPedido) {
+    public void setIdPedido(Integer idPedido) {
         this.idPedido = idPedido;
     }
 
-    public Long getCantidadmenu() {
+    public Integer getCantidadmenu() {
         return cantidadmenu;
     }
 
-    public void setCantidadmenu(Long cantidadmenu) {
+    public void setCantidadmenu(Integer cantidadmenu) {
         this.cantidadmenu = cantidadmenu;
     }
 
-    public Long getCantidadplato() {
+    public Integer getCantidadplato() {
         return cantidadplato;
     }
 
-    public void setCantidadplato(Long cantidadplato) {
+    public void setCantidadplato(Integer cantidadplato) {
         this.cantidadplato = cantidadplato;
     }
 
-    public Long getPreciototal() {
+    public BigDecimal getPreciototal() {
         return preciototal;
     }
 
-    public void setPreciototal(Long preciototal) {
+    public void setPreciototal(BigDecimal preciototal) {
         this.preciototal = preciototal;
     }
 
-    public Long getGastosenvio() {
+    public BigDecimal getGastosenvio() {
         return gastosenvio;
     }
 
-    public void setGastosenvio(Long gastosenvio) {
+    public void setGastosenvio(BigDecimal gastosenvio) {
         this.gastosenvio = gastosenvio;
     }
 

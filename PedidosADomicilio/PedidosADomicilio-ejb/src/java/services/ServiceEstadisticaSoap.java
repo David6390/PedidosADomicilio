@@ -16,6 +16,9 @@ import javax.ejb.LocalBean;
 @LocalBean
 public class ServiceEstadisticaSoap {
 
-    // Add business logic below. (Right-click in editor and choose
-    // "Insert Code > Add Business Method")
+    public int getNumUsuarios(){
+        int num=0;
+        
+        return num;
+    }
 }

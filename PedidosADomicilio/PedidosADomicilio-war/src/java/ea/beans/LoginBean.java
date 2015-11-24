@@ -67,16 +67,16 @@ public class LoginBean {
         String e = email;
         this.user = this.usuarioRegistradoFacade.usuarioIsRegistrado(this.email, this.pwd);
         if (user!=null){
-            return "inicio";
+            return "VistaLogued";
         }
         else{
-            return "index";
+            return "VistaInicio";
         }
     }
     
     public String doLogout(){
         HttpSession sesion = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
         sesion.invalidate();
-        return "index";
+        return "VistaInicio";
     }
 }

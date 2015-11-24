@@ -17,10 +17,10 @@
                     <!--input type="text" class="form-control" placeholder="Search"/-->
                 </div>
                 <div class="form-group">
-                    <b:inputText placeholder="Password" value="#{loginBean.pwd}" fieldSize="sm"/>
+                    <b:inputText type="password" placeholder="Password" value="#{loginBean.pwd}" fieldSize="sm" required="true"/>
                 </div> 
                 #{''}
-                <b:commandButton action="#{loginBean.doLogin()}" value="Login" look="success" icon="glyphicon-remove" iconAlign="right"/>
+                <b:commandButton action="#{loginBean.doLogin()}" value="Login" look="success" icon="chevron-right" iconAlign="right"/>
             </h:form>
         </b:navBar>
     </h:body>

@@ -25,9 +25,4 @@ and open the template in the editor.
     margin-left: 125px;
     background: #20B2AA -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.8)), to(rgba(255,255,255,0))) !important;
 }
-.logintext{
-    font-weight: bold;
-    color: white;
-    margin-right: 35px;
-}
 

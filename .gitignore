@@ -14,6 +14,8 @@ hs_err_pid*
 PedidosADomicilio/PedidosADomicilio-ejb/build/
 PedidosADomicilio/PedidosADomicilio-ejb/dist/
 PedidosADomicilio/PedidosADomicilio-war/build/
+PedidosADomicilio/PedidosADomicilio-war/nbproject/*
+PedidosADomicilio/PedidosADomicilio-ejb/nbproject/*
 PedidosADomicilio/build/
 PedidosADomicilio/PedidosADomicilio-war/dist/
 PedidosADomicilio/nbproject/private/

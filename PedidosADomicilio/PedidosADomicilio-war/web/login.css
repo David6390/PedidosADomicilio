@@ -12,7 +12,7 @@ body{
     background-color: blue;
     background-repeat: no-repeat;
     background: red;
-    background: #3399FF !important;
+    background: #AADDDD !important;
 }
 p{
     padding-top: 100px;
@@ -25,4 +25,9 @@ p{
 .panel{
     margin: auto;
     width: 250px;
+}
+
+.btn-primary{
+    margin-top: 20px;
+    font-size: 10px;
 }

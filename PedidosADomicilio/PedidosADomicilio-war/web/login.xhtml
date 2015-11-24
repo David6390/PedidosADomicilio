@@ -12,16 +12,17 @@
         <p>Please sign in</p>
         <h:form>
             <h:panelGrid columns="1" cellpadding="5" styleClass="panel">
-                <b:inputText>
+                <b:inputText id="email" type="text" class="form-control" placeholder="Email Address">
                     <f:facet name="prepend">
-                        <b:icon name="glyphicons-user" class="glyphicons-user"/>
+                        <b:icon name="glyphicon glyphicon-user" class="glyphicon glyphicon-user" />
                     </f:facet>
                 </b:inputText>
-                <b:inputText>
+                <b:inputText id="pwd" type="text" class="form-control" placeholder="Password">
                     <f:facet name="prepend">
-                        <h:outputText value="@" />
+                        <b:iconAwesome name="fa fa-key" class="fa fa-key" />
                     </f:facet>
                 </b:inputText>
+                <b:button class="btn btn-lg btn-primary btn-block" value="Sign In"/>
             </h:panelGrid>
         </h:form>
     </h:body>

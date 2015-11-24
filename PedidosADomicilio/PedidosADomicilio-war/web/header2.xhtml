@@ -13,7 +13,7 @@
                 <b:navLink value="Inicio" href="/faces/VistaLogued"></b:navLink>
             </b:navbarLinks>
             <h:form styleClass="navbar-form navbar-right">
-                <h:outputText styleClass="logintext" value="Logued as #{loginBean.user.email}  "/>
+                <h:outputText styleClass="logintext" value="Logued as: #{loginBean.user.email}  "/>
                 <b:commandButton action="#{loginBean.doLogout()}" value="Logout" look="danger" icon="glyphicon-remove" iconAlign="right"/>
             </h:form>
         </b:navBar>

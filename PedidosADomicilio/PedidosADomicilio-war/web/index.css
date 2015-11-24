@@ -11,7 +11,7 @@ and open the template in the editor.
     color: blue;
     text-align: center;
     font-size: 50px;
-    font-family: cursive;
+    font-family: "Times New Roman", Times, serif;
     font-weight: bold;
     margin-top: 80px;
 }
@@ -24,5 +24,9 @@ and open the template in the editor.
     margin-right: 150px;
     margin-left: 125px;
     background: #20B2AA -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.8)), to(rgba(255,255,255,0))) !important;
+}
+
+.logintext{
+    color: white !important;
 }
 

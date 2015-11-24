@@ -14,13 +14,19 @@ hs_err_pid*
 PedidosADomicilio/PedidosADomicilio-ejb/build/
 PedidosADomicilio/PedidosADomicilio-ejb/dist/
 PedidosADomicilio/PedidosADomicilio-war/build/
+<<<<<<< HEAD
 PedidosADomicilio/PedidosADomicilio-war/nbproject/*
 PedidosADomicilio/PedidosADomicilio-ejb/nbproject/*
+=======
+>>>>>>> 6b88901350ed560b9b76c51daa7b4cc69af7716a
 PedidosADomicilio/build/
 PedidosADomicilio/PedidosADomicilio-war/dist/
 PedidosADomicilio/nbproject/private/
 PedidosADomicilio/PedidosADomicilio-war/nbproject/private/
 PedidosADomicilio/PedidosADomicilio-ejb/nbproject/private/
 PedidosADomicilio/dist/
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 6b88901350ed560b9b76c51daa7b4cc69af7716a

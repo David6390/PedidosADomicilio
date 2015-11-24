@@ -11,12 +11,16 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
-/PedidosADomicilio/PedidosADomicilio-ejb/build/
-/PedidosADomicilio/PedidosADomicilio-ejb/dist/
-/PedidosADomicilio/PedidosADomicilio-war/build/
-/PedidosADomicilio/build/
-/PedidosADomicilio/PedidosADomicilio-war/dist/
-/PedidosADomicilio/nbproject/private/
-/PedidosADomicilio/PedidosADomicilio-war/nbproject/private/
-/PedidosADomicilio/PedidosADomicilio-ejb/nbproject/private/
-/PedidosADomicilio/dist/
+PedidosADomicilio/PedidosADomicilio-ejb/build/
+PedidosADomicilio/PedidosADomicilio-ejb/dist/
+PedidosADomicilio/PedidosADomicilio-war/build/
+PedidosADomicilio/PedidosADomicilio-war/nbproject/*
+PedidosADomicilio/PedidosADomicilio-ejb/nbproject/*
+PedidosADomicilio/build/
+PedidosADomicilio/PedidosADomicilio-war/dist/
+PedidosADomicilio/nbproject/private/
+PedidosADomicilio/PedidosADomicilio-war/nbproject/private/
+PedidosADomicilio/PedidosADomicilio-ejb/nbproject/private/
+PedidosADomicilio/dist/
+
+

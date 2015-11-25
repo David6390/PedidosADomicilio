@@ -52,11 +52,11 @@ public class Menu implements Serializable {
     @Size(max = 100)
     @Column(name = "DESCRIPCION")
     private String descripcion;
+    @OneToMany(mappedBy = "idMenu")
+    private Collection<Pedido> pedidoCollection;
     @JoinColumn(name = "CIF", referencedColumnName = "CIF")
     @ManyToOne(optional = false)
     private Restaurante cif;
-    @OneToMany(mappedBy = "idMenu")
-    private Collection<Pedido> pedidoCollection;
 
     public Menu() {
     }
@@ -97,14 +97,6 @@ public class Menu implements Serializable {
         this.descripcion = descripcion;
     }
 
-    public Restaurante getCif() {
-        return cif;
-    }
-
-    public void setCif(Restaurante cif) {
-        this.cif = cif;
-    }
-
     @XmlTransient
     public Collection<Pedido> getPedidoCollection() {
         return pedidoCollection;
@@ -112,6 +104,14 @@ public class Menu implements Serializable {
 
     public void setPedidoCollection(Collection<Pedido> pedidoCollection) {
         this.pedidoCollection = pedidoCollection;
+    }
+
+    public Restaurante getCif() {
+        return cif;
+    }
+
+    public void setCif(Restaurante cif) {
+        this.cif = cif;
     }
 
     @Override

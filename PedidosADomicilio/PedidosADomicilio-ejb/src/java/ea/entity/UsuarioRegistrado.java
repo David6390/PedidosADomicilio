@@ -7,7 +7,6 @@ package ea.entity;
 
 import java.io.Serializable;
 import java.util.Collection;
-import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -17,8 +16,6 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -38,7 +35,6 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "UsuarioRegistrado.findByNombre", query = "SELECT u FROM UsuarioRegistrado u WHERE u.nombre = :nombre"),
     @NamedQuery(name = "UsuarioRegistrado.findByApellido1", query = "SELECT u FROM UsuarioRegistrado u WHERE u.apellido1 = :apellido1"),
     @NamedQuery(name = "UsuarioRegistrado.findByApellido2", query = "SELECT u FROM UsuarioRegistrado u WHERE u.apellido2 = :apellido2"),
-    @NamedQuery(name = "UsuarioRegistrado.findByFechanacimiento", query = "SELECT u FROM UsuarioRegistrado u WHERE u.fechanacimiento = :fechanacimiento"),
     @NamedQuery(name = "UsuarioRegistrado.findByDireccion", query = "SELECT u FROM UsuarioRegistrado u WHERE u.direccion = :direccion"),
     @NamedQuery(name = "UsuarioRegistrado.findByCodpostal", query = "SELECT u FROM UsuarioRegistrado u WHERE u.codpostal = :codpostal"),
     @NamedQuery(name = "UsuarioRegistrado.findByCiudad", query = "SELECT u FROM UsuarioRegistrado u WHERE u.ciudad = :ciudad"),
@@ -64,9 +60,6 @@ public class UsuarioRegistrado implements Serializable {
     @Size(max = 20)
     @Column(name = "APELLIDO2")
     private String apellido2;
-    @Column(name = "FECHANACIMIENTO")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date fechanacimiento;
     @Size(max = 100)
     @Column(name = "DIRECCION")
     private String direccion;
@@ -131,14 +124,6 @@ public class UsuarioRegistrado implements Serializable {
 
     public void setApellido2(String apellido2) {
         this.apellido2 = apellido2;
-    }
-
-    public Date getFechanacimiento() {
-        return fechanacimiento;
-    }
-
-    public void setFechanacimiento(Date fechanacimiento) {
-        this.fechanacimiento = fechanacimiento;
     }
 
     public String getDireccion() {

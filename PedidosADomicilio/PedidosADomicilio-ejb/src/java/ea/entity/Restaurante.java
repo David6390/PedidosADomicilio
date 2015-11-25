@@ -77,11 +77,11 @@ public class Restaurante implements Serializable {
     @Column(name = "LONGITUD")
     private String longitud;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cif")
-    private Collection<Menu> menuCollection;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "cif")
     private Collection<Pedido> pedidoCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cif")
     private Collection<Plato> platoCollection;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "cif")
+    private Collection<Menu> menuCollection;
 
     public Restaurante() {
     }
@@ -171,15 +171,6 @@ public class Restaurante implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Menu> getMenuCollection() {
-        return menuCollection;
-    }
-
-    public void setMenuCollection(Collection<Menu> menuCollection) {
-        this.menuCollection = menuCollection;
-    }
-
-    @XmlTransient
     public Collection<Pedido> getPedidoCollection() {
         return pedidoCollection;
     }
@@ -195,6 +186,15 @@ public class Restaurante implements Serializable {
 
     public void setPlatoCollection(Collection<Plato> platoCollection) {
         this.platoCollection = platoCollection;
+    }
+
+    @XmlTransient
+    public Collection<Menu> getMenuCollection() {
+        return menuCollection;
+    }
+
+    public void setMenuCollection(Collection<Menu> menuCollection) {
+        this.menuCollection = menuCollection;
     }
 
     @Override

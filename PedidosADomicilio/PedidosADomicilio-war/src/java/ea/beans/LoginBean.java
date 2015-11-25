@@ -64,7 +64,6 @@ public class LoginBean {
     
     public String doLogin(){
         //FacesMessage message = null;
-        String e = email;
         this.user = this.usuarioRegistradoFacade.usuarioIsRegistrado(this.email, this.pwd);
         if (user!=null){
             return "VistaLogued";

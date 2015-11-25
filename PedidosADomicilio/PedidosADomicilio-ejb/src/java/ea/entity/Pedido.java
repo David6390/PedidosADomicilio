@@ -53,18 +53,18 @@ public class Pedido implements Serializable {
     @NotNull
     @Column(name = "GASTOSENVIO")
     private BigDecimal gastosenvio;
-    @JoinColumn(name = "DNI", referencedColumnName = "DNI")
-    @ManyToOne(optional = false)
-    private UsuarioRegistrado dni;
-    @JoinColumn(name = "CIF", referencedColumnName = "CIF")
-    @ManyToOne(optional = false)
-    private Restaurante cif;
-    @JoinColumn(name = "ID_PLATO", referencedColumnName = "ID_PLATO")
-    @ManyToOne
-    private Plato idPlato;
     @JoinColumn(name = "ID_MENU", referencedColumnName = "ID_MENU")
     @ManyToOne
     private Menu idMenu;
+    @JoinColumn(name = "ID_PLATO", referencedColumnName = "ID_PLATO")
+    @ManyToOne
+    private Plato idPlato;
+    @JoinColumn(name = "CIF", referencedColumnName = "CIF")
+    @ManyToOne(optional = false)
+    private Restaurante cif;
+    @JoinColumn(name = "DNI", referencedColumnName = "DNI")
+    @ManyToOne(optional = false)
+    private UsuarioRegistrado dni;
 
     public Pedido() {
     }
@@ -119,20 +119,12 @@ public class Pedido implements Serializable {
         this.gastosenvio = gastosenvio;
     }
 
-    public UsuarioRegistrado getDni() {
-        return dni;
+    public Menu getIdMenu() {
+        return idMenu;
     }
 
-    public void setDni(UsuarioRegistrado dni) {
-        this.dni = dni;
-    }
-
-    public Restaurante getCif() {
-        return cif;
-    }
-
-    public void setCif(Restaurante cif) {
-        this.cif = cif;
+    public void setIdMenu(Menu idMenu) {
+        this.idMenu = idMenu;
     }
 
     public Plato getIdPlato() {
@@ -143,12 +135,20 @@ public class Pedido implements Serializable {
         this.idPlato = idPlato;
     }
 
-    public Menu getIdMenu() {
-        return idMenu;
+    public Restaurante getCif() {
+        return cif;
     }
 
-    public void setIdMenu(Menu idMenu) {
-        this.idMenu = idMenu;
+    public void setCif(Restaurante cif) {
+        this.cif = cif;
+    }
+
+    public UsuarioRegistrado getDni() {
+        return dni;
+    }
+
+    public void setDni(UsuarioRegistrado dni) {
+        this.dni = dni;
     }
 
     @Override

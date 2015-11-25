@@ -16,7 +16,8 @@ and open the template in the editor.
     margin-top: 80px;
 }
 
-#panel{
+
+.panel{
     height: 160px;
     padding: 25px;
     margin-top: 80px;

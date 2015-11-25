@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <link href="busqueda.css" type="text/css" rel="stylesheet" />
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <p id="textobusqueda"> Lista de Restaurantes </p>
+        <h:form id="tabla">
+            <p:dataTable var="res" value="#{restauranteBean.restaurantes}">
+            <p:column headerText="Id">
+                <f:facet name="header">
+                    Nombre:
+                </f:facet>
+                    #{res.nombre}
+            </p:column>
+            <p:column headerText="Year">
+                <f:facet name="header">
+                    Dirección:
+                </f:facet>
+                    #{res.direccion}    
+            </p:column>
+            <p:column headerText="Year">
+                <f:facet name="header">
+                    Código Postal:
+                </f:facet>
+                    #{res.codpostal}   
+            </p:column>
+            <p:column headerText="Year">
+                <f:facet name="header">
+                    Ciudad:
+                </f:facet>
+                    #{res.ciudad}   
+            </p:column>
+            <p:column headerText="Year">
+                <f:facet name="header">
+                    Teléfono:
+                </f:facet>
+                    #{res.telefono}    
+            </p:column>
+            <p:column headerText="Year">
+                <f:facet name="header">
+                    Email:
+                </f:facet>
+                      #{res.email}  
+            </p:column>
+            <p:column headerText="Year">
+                <f:facet name="header">
+                    Pedir Comida
+                </f:facet>
+                    <h:commandButton value="Seleccionar" action="#{restauranteBean.mostrarRealizarPedido(restauranteSeleccionado)}"/>
+            </p:column>
+        </p:dataTable>
+        </h:form>
+    </h:body>
+</html>
+

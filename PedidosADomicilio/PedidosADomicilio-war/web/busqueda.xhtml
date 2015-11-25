@@ -3,12 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:b="http://bootsfaces.net/ui">
+    <link href="index.css" type="text/css" rel="stylesheet" />
     <h:head>
         <title>Inicio</title>
     </h:head>
     <h:body>
         <p id="textoentrada"> Portal de Comida a Domicilio </p>
-        <h:form>
+        <h:form id="panel">
         <b:panel id="panel">
             <b:panelGrid colSpans="5,5,2">
                 <h:outputLabel value="Codigo Postal:"/>
@@ -16,7 +17,7 @@
                 <h:outputLabel value="" />
                 <b:inputText span="10" value="#{restauranteBean.codpostal}"/>
                 <b:inputText span="10" value="Tipo de Comida"/>
-                <h:commandButton action="#{restauranteBean.doBuscar()}" value="Buscar Restaurantes"/>
+                <b:commandButton value="Buscar Restaurantes" action="#{restauranteBean.doBuscar()}" id="acb" icon="glyphicon glyphicon-zoom-in" look="success" />
             </b:panelGrid>
         </b:panel>
         </h:form>

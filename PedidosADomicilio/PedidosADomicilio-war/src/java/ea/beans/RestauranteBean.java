@@ -138,7 +138,7 @@ public class RestauranteBean {
    
     public String doBuscar() {        
         restaurantes = this.restauranteFacade.buscarPorCP(codpostal);        
-        return "listarRestaurantes.xhtml";
+        return "VistaListaRest.xhtml";
     }
 
     /*public List<Restaurante> listaRestaurantesBuscados(){
@@ -146,7 +146,7 @@ public class RestauranteBean {
         return restaurantes;
     }*/
     
-    public String mostrarmostrarRealizarPedido(Restaurante restauranteSeleccionado){
+    public String mostrarRealizarPedido(Restaurante restauranteSeleccionado){
         this.restauranteSeleccionado = restauranteSeleccionado;
         return "realizarPedido.xhtml";       
     }

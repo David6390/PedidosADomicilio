@@ -25,14 +25,14 @@ public class RestauranteBean {
     private RestauranteFacade restauranteFacade;
     
     private Restaurante restauranteSeleccionado;
-    private List<Restaurante> listaRestaurantes;
+    private List<Restaurante> restaurantes;
     private String cif;
     private String password;
     private String nombre;
     private String direccion;
-    private Integer codpostal;
+    private String codpostal = "Código Postal"; 
     private String ciudad;
-    private Long telefono;
+    private String telefono;
     private String email;
     private String latitud;
     private String longitud;
@@ -48,14 +48,14 @@ public class RestauranteBean {
         this.restauranteSeleccionado = restauranteSeleccionado;
     }
 
-    public List<Restaurante> getListaRestaurantes() {
-        return listaRestaurantes;
+    public List<Restaurante> getRestaurantes() {
+        return restaurantes;
     }
 
-    public void setListaRestaurantes(List<Restaurante> listaRestaurantes) {
-        this.listaRestaurantes = listaRestaurantes;
+    public void setRestaurantes(List<Restaurante> restaurantes) {
+        this.restaurantes = restaurantes;
     }
-
+    
     public String getCif() {
         return cif;
     }
@@ -88,11 +88,11 @@ public class RestauranteBean {
         this.direccion = direccion;
     }
 
-    public Integer getCodpostal() {
+    public String getCodpostal() {
         return codpostal;
     }
 
-    public void setCodpostal(Integer codpostal) {
+    public void setCodpostal(String codpostal) {
         this.codpostal = codpostal;
     }
 
@@ -104,11 +104,11 @@ public class RestauranteBean {
         this.ciudad = ciudad;
     }
 
-    public Long getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(Long telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
@@ -135,16 +135,16 @@ public class RestauranteBean {
     public void setLongitud(String longitud) {
         this.longitud = longitud;
     }
-    
+   
     public String doBuscar() {        
-        //listaRestaurantes = this.restauranteFacade.buscarRestaurante(codpostal);        
+        restaurantes = this.restauranteFacade.buscarPorCP(codpostal);        
         return "listarRestaurantes.xhtml";
     }
 
-    public List<Restaurante> listaRestaurantesBuscados(){
-        List<Restaurante> restaurantes = listaRestaurantes;
+    /*public List<Restaurante> listaRestaurantesBuscados(){
+        restaurantes = restauranteFacade.buscarPorCP(codpostal);
         return restaurantes;
-    }
+    }*/
     
     public String mostrarmostrarRealizarPedido(Restaurante restauranteSeleccionado){
         this.restauranteSeleccionado = restauranteSeleccionado;

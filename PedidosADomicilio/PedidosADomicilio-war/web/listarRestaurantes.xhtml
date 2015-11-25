@@ -6,7 +6,9 @@
     <h:head>
         <title>Restaurantes</title>
     </h:head>
-    <h:dataTable value="#{restauranteBean.listaRestaurantesBuscados()}" var="res"  border="1">
+    <h:body>
+        <h:form>
+            <h:dataTable value="#{restauranteBean.restaurantes}" var="res"  border="1">
                 <h:column>
                     <f:facet name="header">
                         Nombre:

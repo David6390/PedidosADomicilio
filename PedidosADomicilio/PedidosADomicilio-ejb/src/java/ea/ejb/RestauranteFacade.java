@@ -3,16 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package ea.ejb;
 
 import ea.entity.Restaurante;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
- * @author lavitz
+ * @author MJ
  */
 @Stateless
 public class RestauranteFacade extends AbstractFacade<Restaurante> {
@@ -27,5 +30,12 @@ public class RestauranteFacade extends AbstractFacade<Restaurante> {
     public RestauranteFacade() {
         super(Restaurante.class);
     }
-    
+
+    public List<Restaurante> buscarPorCP(String codpostal) {
+        Query q;
+        
+        q = em.createNamedQuery("Restaurante.findByCodpostal");
+        q.setParameter("codpostal", codpostal);
+        return q.getResultList();
+    }    
 }

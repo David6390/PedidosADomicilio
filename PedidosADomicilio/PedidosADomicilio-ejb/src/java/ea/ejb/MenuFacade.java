@@ -6,9 +6,11 @@
 package ea.ejb;
 
 import ea.entity.Menu;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -27,5 +29,16 @@ public class MenuFacade extends AbstractFacade<Menu> {
     public MenuFacade() {
         super(Menu.class);
     }
+
+    public List<Menu> findByRestaurante(String cif) {
+        Query q;
+        List<Menu> listaMenus;        
+        
+        q = em.createQuery("SELECT c FROM Menu c WHERE c.cif = :cif");
+        q.setParameter("cif", cif);
+        listaMenus = q.getResultList();
+        return listaMenus;
+    }
+
     
 }

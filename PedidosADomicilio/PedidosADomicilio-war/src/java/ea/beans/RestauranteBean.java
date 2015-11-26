@@ -6,7 +6,9 @@
 
 package ea.beans;
 
+import ea.ejb.MenuFacade;
 import ea.ejb.RestauranteFacade;
+import ea.entity.Menu;
 import ea.entity.Restaurante;
 import java.util.List;
 import javax.ejb.EJB;
@@ -24,6 +26,10 @@ public class RestauranteBean {
     @EJB
     private RestauranteFacade restauranteFacade;
     
+    @EJB
+    private MenuFacade menuFacade;
+    
+    private List<Menu> menus;
     private Restaurante restauranteSeleccionado;
     private List<Restaurante> restaurantes;
     private String cif;
@@ -54,6 +60,14 @@ public class RestauranteBean {
 
     public void setRestaurantes(List<Restaurante> restaurantes) {
         this.restaurantes = restaurantes;
+    }
+
+    public List<Menu> getMenus() {
+        return menus;
+    }
+
+    public void setMenus(List<Menu> menus) {
+        this.menus = menus;
     }
     
     public String getCif() {
@@ -146,8 +160,17 @@ public class RestauranteBean {
         return restaurantes;
     }*/
     
-    public String mostrarRealizarPedido(Restaurante restauranteSeleccionado){
+    public String mostrarMenusPlatos(Restaurante restauranteSeleccionado){
         this.restauranteSeleccionado = restauranteSeleccionado;
-        return "realizarPedido.xhtml";       
+        return "VistaMenusPlatos.xhtml";       
+    }
+    
+    public List <Menu> listamenus(){
+        menus = menuFacade.findByRestaurante(restauranteSeleccionado.getCif());
+        return menus;
+    }
+    
+    public String goToVolver(){
+        return "VistaListarRest.xhtml";
     }
 }

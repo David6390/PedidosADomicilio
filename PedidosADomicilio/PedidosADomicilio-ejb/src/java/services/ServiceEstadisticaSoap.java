@@ -38,8 +38,33 @@ public class ServiceEstadisticaSoap {
         List lista = pedidoFacade.menusMasPedidos();
         
         String[] definitiva;
-        definitiva = new String[10];
+        int tamaño=10;
+        if(lista.size()<5)
+            tamaño=lista.size()*2;
+        definitiva = new String[tamaño];
         for(int i=0;i<5;i++){
+            if(i+1>lista.size()){
+                break;
+            }
+            Object[] temp =  (Object[]) lista.get(i);
+            int e = i*2;
+            definitiva[e]= (String)temp[0];
+            definitiva[e+1]= Integer.toString((Integer)temp[1]);
+        }
+        return definitiva;
+    }
+    
+    public String[] getTopTenRestaurantes(){
+        
+        List lista = pedidoFacade.restaurantesPopulares();
+        
+        String[] definitiva;
+        int tamaño=20;
+        if(lista.size()<10)
+            tamaño=lista.size()*2;
+        
+        definitiva = new String[tamaño];
+        for(int i=0;i<10;i++){
             if(i+1>lista.size()){
                 break;
             }

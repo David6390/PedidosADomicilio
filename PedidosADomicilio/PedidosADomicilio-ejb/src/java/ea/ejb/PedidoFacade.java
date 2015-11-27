@@ -40,5 +40,16 @@ public class PedidoFacade extends AbstractFacade<Pedido> {
                 
         return lista;
     }
+
+    public List restaurantesPopulares() {
+    
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        List lista = em.createNativeQuery("Select r.NOMBRE,count(p.CIF) as "
+                + "numero from pedido p join restaurante r on p.CIF=r.CIF "
+                + "group by r.NOMBRE order by numero desc").getResultList();
+                
+        return lista;
+    }
     
 }

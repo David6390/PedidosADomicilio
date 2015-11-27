@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package service;
+package servicios;
 
 import javax.ejb.EJB;
 import javax.jws.WebMethod;
@@ -28,6 +28,11 @@ public class ServicioEstadisticaSOAP {
     @WebMethod(operationName = "getTopFiveMenus")
     public String[] getTopFiveMenus() {
         return ejbRef.getTopFiveMenus();
+    }
+
+    @WebMethod(operationName = "getTopTenRestaurantes")
+    public String[] getTopTenRestaurantes() {
+        return ejbRef.getTopTenRestaurantes();
     }
     
 }
